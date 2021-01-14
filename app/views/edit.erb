@@ -1,21 +1,10 @@
-<!DOCTYPE html>
-<html>
- <head>
-  <meta charset="UTF-8">
-  <title>Edit Article</title>
- </head>
- <body>
-    <p>Title: <%= @article.title %></p>
-    <p>Content: <%= @article.content %></p>
-
-    <form action='/articles/<%= @article.id %>' method="post">
+<form action='/articles/<%=@article.id %>' method="post">
         <input id="hidden" type="hidden" name="_method" value="patch">
         <p>Title: <input id="title" type="text" name="article[title]" value="<%= @article.title %>" /></p>
         
-        <p>Content: <textarea id="content" type="text" name="article[content]"  value="<%= @article.content %>"></p>
+        <p>Content: <textarea id="content" type="text" name="article[content]"  value="<%= @article.content %>"></textarea></p>
         <input type="submit" id="Submit"/>
-    </form>
- </body>
-</html>
+</form>
+
 
 

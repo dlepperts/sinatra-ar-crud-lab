@@ -11,7 +11,6 @@ class ApplicationController < Sinatra::Base
   get '/' do
   end
 
-
   get '/articles' do
     @articles = Article.all
     erb :index
@@ -42,8 +41,9 @@ class ApplicationController < Sinatra::Base
     redirect to "/articles/#{ @article.id }"
   end
 
-  delete '/articles/:id' do
-    erb :show
+  delete "/articles/:id" do
+    Article.destroy(params[:id])
+    redirect to "/articles"
   end
 
 end

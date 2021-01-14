@@ -8,7 +8,7 @@
     <p>Title: <%= @article.title %></p>
     <p>Content: <%= @article.content %></p>
 
-    <form action="/articles/<%= @article.id %>" method="post">
+    <form action='/articles/<%= @article.id %>' method="post">
         <input id="hidden" type="hidden" name="_method" value="patch">
         <p>Title: <input id="title" type="text" name="article[title]" value="<%= @article.title %>" />
         
